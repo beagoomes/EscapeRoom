@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Votação</title>
+    <style>
+        body{
+            background-color: black;
+            font-family: 'Courier New', Courier, monospace;
+            color: rgb(238, 236, 236);
+            text-align: center;
+        }
+        #entrada{
+            border-radius: 5px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Quem é o culpado?</h1>
+        <p>Escreva corretamente!</p>
+        <input id="entrada" type="text" placeholder="Digite o nome..." autocomplete="off">
+    </main>
+
+    <script>
+        function verificar() {
+            let resposta = "Gerald Smith";
+            let respostaUsuario = document.getElementById("entrada").value.trim();
+
+            if (respostaUsuario.toLowerCase() === resposta.toLowerCase()) {
+                // se acertar
+                window.location.href = "explicacaoFinal.html";
+            } else {
+                // se errar
+                window.location.href = "gameOver.html";
+            }
+        }
+
+        // Dispara a verificação ao pressionar Enter dentro do input
+        document.getElementById("entrada").addEventListener("keydown", function(e) {
+            if (e.key === "Enter") {
+                verificar();
+            }
+        });
+    </script>
+</body>
+</html>

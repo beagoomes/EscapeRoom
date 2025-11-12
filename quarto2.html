@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>...</title>
+    <link rel="stylesheet" href="styleQuarto2.css">
+</head>
+<body>
+
+    <div><h1>∙Investigue o quarto</h1></div>
+    
+    <div id="timer">10:00</div>
+
+    <script src="timer.js"></script>
+    <div><button id="pistaCama" onclick="mostrarPistaCama()"></button></div>
+
+    <div><button id="pistaSoro" onclick="mostrarPistaSoro()"></button></div>
+
+    <div><button id="pistaCorpo" onclick="mostrarPistaCorpo()"></button>
+    <div><button id="proximaSala" disabled>proxima sala > </button></div></div>
+
+    <script>
+        function mostrarPistaCama(){
+            alert("As luzes sempre piscam quando ele passa pelo corredor.");
+        }
+        function mostrarPistaSoro(){
+            alert("2597...");
+        }
+        function mostrarPistaCorpo(){
+            alert("O culpado sempre deixa a porta entreaberta… mas nunca entra primeiro.")
+        }
+
+        let clicados = {
+      pistaCama: false,
+      pistaSoro: false,
+      pistaCorpo: false
+      };
+
+      //Verficar se todos foram clicados
+      function verificarTodos(){
+        const todosClicados = Object.values(clicados).every(valor => valor);
+        if (todosClicados){
+          document.getElementById("proximaSala").disabled = false;
+        }
+      }
+        //função clique para todos os botões
+        //addEventListener = serve para escutar eventos
+        document.getElementById("pistaCama").addEventListener("click", function() {
+          clicados.pistaCama = true;
+          verificarTodos();
+        });
+        document.getElementById("pistaSoro").addEventListener("click", function() {
+          clicados.pistaSoro = true;
+          verificarTodos();
+        });
+        document.getElementById("pistaCorpo").addEventListener("click", function() {
+          clicados.pistaCorpo = true;
+          verificarTodos();
+        });
+
+        document.getElementById("proximaSala").addEventListener("click", function() {
+          window.open("quarto3.html", "_self");
+        });
+    </script>
+    
+</body>
+    
+</body>
+</html>

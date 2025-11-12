@@ -1,0 +1,71 @@
+body {
+    background-image: url(quarto1.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    image-rendering: pixelated;
+    width: 100vw;
+    height: 100vh;
+
+}
+
+h1 {
+    font-family: 'Courier New', Courier, monospace;
+    color: rgb(238, 236, 236);
+    font-size: 20px;
+    margin: 10px;
+}
+
+button{
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+}
+#pistaCama {
+    border-radius: 30px;
+    height: 45px;
+    width: 112px;
+    margin-top: 28.2em;
+    margin-left:16em;
+}
+#pistaGaveta{
+    border-radius: 30px;
+    height: 40px;
+    width: 90px;
+    margin-top: 24.5em;
+    margin-left:29.2em;
+}
+#pistaCorpo{
+    border-radius: 30px;
+    height: 70px;
+    width: 80px;
+    margin-top: 46em;
+    margin-left:9em;
+}
+
+#proximaSala{
+    font-family: 'Courier New', Courier, monospace;
+    border-radius: 10px;
+    color: rgb(238, 236, 236);
+    background: transparent;
+    font-size: 20px;
+    margin-left: 15em;
+}
+
+
+
+#timer {
+  position: fixed;
+  top: 8px;
+  left: 270px;
+  color: #ffffff;
+  padding: 10px 20px;
+  font-family: "Courier New", monospace;
+  font-size: 22px;
+  /* letter-spacing: 2px; */
+  z-index: 9999;
+  transition: color 1.5s, box-shadow 0.5s;
+}

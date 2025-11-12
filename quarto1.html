@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>...</title>
+    <link rel="stylesheet" href="styleQuarto1.css" />
+  </head>
+  <body>
+    <div>
+      <h1>∙Investigue o quarto:</h1>
+      <button id="pistaGaveta" onclick="mostrarPistaGaveta()"></button>
+    </div>
+    <div id="timer">10:00</div>
+
+    <script src="timer.js"></script>
+    <div><button id="pistaCama" onclick="mostrarPistaCama()"></button></div>
+    <div>
+      <button id="pistaCorpo" onclick="mostrarPistaCorpo()"></button>
+      <div><button id="proximaSala" disabled>proxima sala ></button></div>
+    </div>
+
+    <script>
+      function mostrarPistaCama() {
+        alert(
+          "No frio metal, o silêncio pesa,\nUm brilho turvo, memória acesa.\nGuardou nos sulcos a voz do grito,\nEco cortante, gesto maldito.\n\nJá não é lâmina — é testemunha,\nDe um ato cego que ainda punha\nNa noite muda, em tom febril,\nUm fio de culpa, um rastro sutil."
+        );
+      }
+      function mostrarPistaCorpo() {
+        alert(
+          "Nome Paciente : Emanuel Lara\nId: 62542545\nMedico Responsável: Dr. Gerald Smith"
+        );
+      }
+      function mostrarPistaGaveta() {
+        alert(
+          "Oi meu querido filho,\nEstou orando pela sua melhora todos os dias, logo logo vc estará em casa, sentimos sua falta.\n\nCom carinho: Mamãe"
+        );
+      }
+
+      let clicados = {
+        pistaGaveta: false,
+        pistaCama: false,
+        pistaCorpo: false,
+      };
+
+      //Verficar se todos foram clicados
+      function verificarTodos() {
+        const todosClicados = Object.values(clicados).every((valor) => valor);
+        if (todosClicados) {
+          document.getElementById("proximaSala").disabled = false;
+        }
+      }
+      //função clique para todos os botões
+      //addEventListener = serve para escutar eventos
+      document
+        .getElementById("pistaGaveta")
+        .addEventListener("click", function () {
+          clicados.pistaGaveta = true;
+          verificarTodos();
+        });
+      document
+        .getElementById("pistaCama")
+        .addEventListener("click", function () {
+          clicados.pistaCama = true;
+          verificarTodos();
+        });
+      document
+        .getElementById("pistaCorpo")
+        .addEventListener("click", function () {
+          clicados.pistaCorpo = true;
+          verificarTodos();
+        });
+
+      document
+        .getElementById("proximaSala")
+        .addEventListener("click", function () {
+          window.open("quarto2.html", "_self");
+        });
+    </script>
+  </body>
+</html>

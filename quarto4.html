@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>...</title>
+    <link rel="stylesheet" href="styleQuarto4.css" />
+  </head>
+  <img id="imagemOculos" src="oculos.png" alt="Oculos preto" hidden>  
+  <body>
+    <div>
+      <h1>∙Investigue o quarto</h1>
+      <div id="timer">10:00</div>
+
+    <script src="timer.js"></script>
+      <button id="pistaRosto" onclick="mostrarPistaRosto()"></button>
+    </div>
+    <div>
+      <button id="pistaMao" onclick="mostrarPistaMao()"></button>
+      <div><button id="voltarPista" hidden>Voltar</button></div>  
+  
+    </div>
+
+    <div><button id="votacao" disabled>Votação></button></div>
+
+    <script>
+      function mostrarPistaRosto() {
+        alert("Ele me entregou isso, me pediu para falar que foi você!");
+      }
+
+      function mostrarPistaMao(){
+        const imagem = document.getElementById("imagemOculos");
+        const voltar = document.getElementById("voltarPista");
+
+        imagem.style.display = "block";
+        voltar.style.display = "block";
+
+        clicados.pistaMao = true;
+        verificarTodos();
+      }
+
+      document.getElementById("voltarPista").addEventListener("click", function () {
+          document.getElementById("imagemOculos").style.display = "none";
+          document.getElementById("voltarPista").style.display = "none";
+        });
+
+        let clicados = {
+        pistaMao: false,
+        pistaRosto: false,
+      };
+
+      //Verficar se todos foram clicados
+      function verificarTodos() {
+        const todosClicados = Object.values(clicados).every((valor) => valor);
+        if (todosClicados) {
+          document.getElementById("votacao").disabled = false;
+        }
+      }
+      //função clique para todos os botões
+      //addEventListener = serve para escutar eventos
+      document.getElementById("pistaRosto").addEventListener("click", function () {
+        clicados.pistaRosto = true;
+        verificarTodos();
+      });
+      document.getElementById("pistaMao").addEventListener("click", function () {
+          clicados.pistaMao = true;
+          verificarTodos();
+      });
+
+      document.getElementById("votacao").addEventListener("click", function () {
+          window.open("votacao.html", "_self");
+        });
+    </script>
+  </body>
+</html>

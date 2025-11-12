@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>...</title>
+    <link rel="stylesheet" href="styleQuarto3.css">
+</head>
+
+<img id= "imagemDigital" src="Digital.png" alt="Digital">
+<body>
+
+     <div><h1>∙Investigue o quarto</h1>
+      <div id="timer">10:00</div>
+
+    <script src="timer.js"></script>
+        <button id="voltarD" hidden>Voltar</button>
+        <button id="pistaGarrafa" onclick="mostrarPistaGarrafa()"></button>
+    </div>
+
+    
+    <div><button id="pistaPapel" onclick="mostrarPistaPapel()"></button>
+    <div><button id="proximaSala" disabled>proxima sala ></button></div>
+</div>
+
+    <script>
+
+        function mostrarPistaPapel(){
+            alert("Hospício São Marcos\nEndereço: Rua Ambravar des loucos, 260 — Santa Madre\nTelefone: (91) 1836-3678\n\nAtesto, para fins fictícios, que o(a) paciente Peter Frost foi internado(a) para tratamento hospitalar no período abaixo:\n\nData de admissão: 24 de outubro de 1993\n\nData de alta: 02 de novembro de 1993\n\nPeríodo total de internação: 10 (dez) dias\n\nAssinatura :\n\nDra. Annie Brown — CRM 82674\nCarimbo: SÃO MARCOS — DOCUMENTO OFICIAL");
+
+        }
+        function mostrarPistaGarrafa(){
+        const imagem = document.getElementById("imagemDigital");
+        const voltar = document.getElementById("voltarD");
+
+        imagem.style.display = "block";
+        voltar.style.display = "block";
+
+        clicados.pistaGarrafa = true;
+        verificarTodos();
+      }
+
+      document.getElementById("voltarD").addEventListener("click", function () {
+          document.getElementById("imagemDigital").style.display = "none";
+          document.getElementById("voltarD").style.display = "none";
+        });
+
+        let clicados = {
+        pistaGarrafa: false,
+        pistaPapel: false,
+      };
+
+      //Verficar se todos foram clicados
+      function verificarTodos() {
+        const todosClicados = Object.values(clicados).every((valor) => valor);
+        if (todosClicados) {
+          document.getElementById("proximaSala").disabled = false;
+        }
+      }
+      //função clique para todos os botões
+      //addEventListener = serve para escutar eventos
+      document.getElementById("pistaGarrafa").addEventListener("click", function () {
+        clicados.pistaGarrafa = true;
+        verificarTodos();
+      });
+      document.getElementById("pistaPapel").addEventListener("click", function () {
+          clicados.pistaPapel = true;
+          verificarTodos();
+      });
+
+      document.getElementById("proximaSala").addEventListener("click", function () {
+          window.open("quarto4.html", "_self");
+        });
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,95 @@
+
+h1{
+    font-family: 'Courier New', Courier, monospace;
+    color: rgb(238, 236, 236);
+    font-size:20px;
+    margin: 10px;
+    
+} 
+ body {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-image: url('escritorio1.png');
+    overflow: hidden;
+    image-rendering: pixelated;
+    background-position: center;
+    background-size:cover; 
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;  
+
+    
+}
+button{
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+}
+#pistaFicha{
+    margin-left:16em;
+    margin-top: 44.5em;
+    height: 70px;
+    width: 120px;
+    border-radius: 50px;
+    
+}
+#quadro{
+   
+    margin-left:18.5em;
+    margin-top: 11.7em;
+    height: 100px;
+    width: 67px;
+    border-radius: 10px;
+}
+#quadro2{
+    
+    margin-left: 11.4em;
+    margin-top: 11.9em;
+    height: 117px;
+    width: 150px;
+    border-radius: 10px;
+}
+#proximaSala{
+    font-family: 'Courier New', Courier, monospace;
+    border-radius: 10px;
+    color: rgb(238, 236, 236);
+    background: transparent;
+    font-size: 20px;
+    margin-top: 20em;
+    margin-left: 15em;
+
+}
+#imagemFicha{
+    display:none; 
+    position:absolute;
+    top:50%; left:50%; 
+    transform:translate(-50%, -50%);
+}
+#voltarFicha{
+    font-family: 'Courier New', Courier, monospace;
+    border-radius: 10px;
+    color: rgb(238, 236, 236);
+    font-size: 20px;
+    margin-left: 10em;
+}
+
+
+
+#timer {
+  position: fixed;
+  top: 8px;
+  left: 320px;
+  color: #ffffff;
+  padding: 10px 20px;
+  font-family: "Courier New", monospace;
+  font-size: 22px;
+  /* letter-spacing: 2px; */
+  z-index: 9999;
+  transition: color 1.5s, box-shadow 0.5s;
+}
+
+
+
+
+
+

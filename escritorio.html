@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Escritorio</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <img id="imagemFicha" src="ficha.png" alt="Ficha Medica" />
+
+  <body>
+    <div>
+      <h1>∙Investigue o escritorio:</h1>
+      <button id="quadro" onclick="mostrarQuadro()"></button>
+    </div>
+
+    <div id="timer">10:00</div>
+
+    <script src="timer.js"></script>
+
+    <div>
+      <button id="pistaFicha" onclick="mostrarFicha()"></button>
+      <button id="voltarFicha" hidden>Voltar</button>
+    </div>
+
+    <div>
+      <button id="quadro2" onclick="mostrarQuadro2()"></button>
+      <div><button id="proximaSala" disabled>proxima sala ></button></div>
+    </div>
+
+    <script>
+
+      function mostrarQuadro() {
+        alert(
+          "Entre o dourado que o sol acende \nE a sombra que o vento esconde\nA uma cor que não se rende\nMorna, serena, mas que confunde.\nQual é a cor que em meus fios se esconde?"
+        );
+      }
+      function mostrarQuadro2() {
+        alert("789...");
+      }
+      function mostrarFicha() {
+        const imagem = document.getElementById("imagemFicha");
+        const voltar = document.getElementById("voltarFicha");
+
+        imagem.style.display = "block";
+        voltar.style.display = "block";
+
+        clicados.pistaFicha = true;
+        verificarTodos();
+      }
+
+      document
+        .getElementById("voltarFicha")
+        .addEventListener("click", function () {
+          document.getElementById("imagemFicha").style.display = "none";
+          document.getElementById("voltarFicha").style.display = "none";
+        });
+
+      let clicados = {
+        quadro: false,
+        pistaFicha: false,
+        quadro2: false,
+      };
+
+      //Verficar se todos foram clicados
+      function verificarTodos() {
+        const todosClicados = Object.values(clicados).every((valor) => valor);
+        if (todosClicados) {
+          document.getElementById("proximaSala").disabled = false;
+        }
+      }
+      //função clique para todos os botões
+      //addEventListener = serve para escutar eventos
+      document.getElementById("quadro").addEventListener("click", function () {
+        clicados.quadro = true;
+        verificarTodos();
+      });
+      document
+        .getElementById("pistaFicha")
+        .addEventListener("click", function () {
+          clicados.pistaFicha = true;
+          verificarTodos();
+        });
+      document.getElementById("quadro2").addEventListener("click", function () {
+        clicados.quadro2 = true;
+        verificarTodos();
+      });
+
+      document
+        .getElementById("proximaSala")
+        .addEventListener("click", function () {
+          window.open("quarto1.html", "_self");
+        });
+    </script>
+  </body>
+</html>
